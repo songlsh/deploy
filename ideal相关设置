@@ -1,3 +1,10 @@
 1、提示不区分大小写
 选择File->Setting
 Editor->General->Code Complition
+
+2、查看接口的实现类
+IDEA 风格 ctrl + alt +B
+
+查看类或接口的继承关系：
+
+ctrl + h
