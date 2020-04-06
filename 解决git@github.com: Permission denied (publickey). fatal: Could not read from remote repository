@@ -1,0 +1,38 @@
+注：使用git-bash 客户端
+报错:
+    git@github.com: Permission denied (publickey). fatal: Could not read from remote repository
+场景:
+    使用SSH地址下载GitHub项目报错,原因是没有配置SSH keys
+    使用的命令: git clone git@github.com:zhangbeizhen/demo-config.git
+环境:
+    本例window10下载使用Git Bash客户端
+1.命令 
+    ssh-keygen -t rsa -C  邮箱地址
+    例如: ssh-keygen -t rsa -C  youremail@163.com
+    本命令提示输入信息,回车即可
+2.命令 
+    ssh -v git@github.com
+3.命令 
+    ssh-agent -s
+4.命令
+    eval `ssh-agent -s`
+5.命令 
+    ssh-add ~/.ssh/id_rsa
+6.在本例生成的id_rsa.pub在C:\Users\lenovo\.ssh
+7.在github账号下设置
+    1>.进入github账号,
+    2>.在settings页面,找到SSH and GPG keys
+    3>.点击SSH keys 新建SSH keys
+    4>.填写title(自定义名称)，
+    5>.将id_rsa.pub里的内容复制到Key中
+    6>.点击Add SSH Key,完成
+    如图:
+注意:
+    在C:\Users\lenovo\.ssh下有id_rsa和id_rsa.pub
+    需完整复制id_rsa.pub内容
+    否则可能报错:
+    Key is invalid. It must begin with 'ssh-ed25519', 'ssh-rsa', 'ssh-dss', 'ecdsa-sha2-nistp256', 'ecds.....
+8.验证命令
+    ssh -T git@github.com
+9.下载
+    git clone git@github.com:zhangbeizhen/demo-config.git
