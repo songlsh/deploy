@@ -24,3 +24,10 @@ ps -a | grep helloworld 或
 ps -ef |grep helloworld 或者其他
 
 查询到helloworld相关的进程，我们通过kill命令来操作该进程号删除该进程，kill -9  13492
+
+3、压缩解压命令
+tar -zxvf 目标  源  解压
+tar -zcvf 目标  源  压缩
+4、find
+ find / -name *xxx*.c 模糊查找下这个文件
+
